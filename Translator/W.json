@@ -33,5 +33,6 @@
     "yield": "W32",
     "in": "W33",
     "instanceof": "W34",
-    "await": "W35"
+    "await": "W35",
+    "goto": "W36"
 }
