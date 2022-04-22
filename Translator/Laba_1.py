@@ -6,12 +6,9 @@ SERVICE_WORDS = ['break', 'continue', 'else', 'for', 'function', 'if',
                  'switch', 'case', 'default', 'this', 'try', 'catch',
                  'with', '@', 'typeof', 'delete', 'true', 'false', 'null',
                  'void', 'let', 'alert', 'prompt', 'confirm', 'yield', 'in',
-                 'instanceof', 'await']
+                 'instanceof', 'await', 'goto']
 
-OPERATIONS = ['=', '*', '**', '+', '++', '-', '--', '/', '%', '<', '<<', '<=', '>', '>>', '>>>',
-              '>=', '&', '&&', '^', '|', '||', '!', '~', '?', '+=',
-              '-=', '**=', '*=', '/=', '%=', '<<=', '>>=', '>>>=', '&=',
-              '^=', '|=', '!==', '===', '!=', '==']
+OPERATIONS = ['=', '*', '**', '+', '-', '/', '%', '<', '>', '^', '!', '?']
 
 SEPARATORS = ['\t', '\n', ' ', '(', ')', ',', '.', ':', ';', '[', ']',
               '{', '}']
@@ -51,7 +48,7 @@ def main():
         check(tokens, 'R', separator)
 
     # файл, содержащий текст на входном языке программирования
-    f = open('Тестовый код.txt', 'r')
+    f = open('Эксперементальный код.txt', 'r')
     input_sequence = f.read()
     f.close()
 
@@ -264,7 +261,7 @@ def main():
     for token_class in tokens.keys():
         tokens[token_class] = {val: key for key, val in tokens[token_class].items()}
 
-    with open('tokens.json', 'w') as outfile:
+    with open('Лексемы.json', 'w') as outfile:
         json.dump(tokens, outfile, indent=4, ensure_ascii=False)
 
     # отдельных лексемм
@@ -274,12 +271,9 @@ def main():
             json.dump(data, outfile, indent=4, ensure_ascii=False)
 
     # файл, содержащий последовательность кодов лексем входной программы
-    f = open('Лексемы_1.txt', 'w')
+    f = open('Лексемы.txt', 'w')
     f.write(output_sequence)
     f.close()
-
-    with open('Лексемы_2.json', 'w') as outfile:
-        json.dump(output_sequence, outfile, indent=4, ensure_ascii=True)
 
 
 if __name__ == '__main__':
