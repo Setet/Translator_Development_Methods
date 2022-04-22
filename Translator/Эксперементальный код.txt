@@ -1,0 +1,13 @@
+function summ(x)
+{
+q = 10
+sum = 0
+while (x > 0)
+{
+sum += x % q
+x /= q
+}
+alert("Сумма элем = "+sum)
+}
+
+sum(1945)
