@@ -2,13 +2,13 @@ import json  # - передать с .txt на .json
 
 # Лаба 1-список лексем
 SERVICE_WORDS = ['break', 'continue', 'else', 'for', 'function', 'if',
-                 'var', 'while', 'return', 'new', 'do', 'elif', 'set',
-                 'switch', 'case', 'default', 'this', 'try', 'catch',
-                 'with', '@', 'typeof', 'delete', 'true', 'false', 'null',
-                 'void', 'let', 'alert', 'prompt', 'confirm', 'yield', 'in',
-                 'instanceof', 'await', 'goto']
+                 'var', 'while', 'return', 'new', 'do', 'elif',
+                 'switch', 'case', 'this', 'try', 'catch',
+                 'true', 'false', 'null', 'let', 'alert',
+                 'prompt', 'confirm', 'in']
 
-OPERATIONS = ['=', '*', '**', '+', '-', '/', '%', '<', '>', '^', '!', '?']
+OPERATIONS = ['=', '==', '*', '**', '+', '++', '-', '--', '/', '%', '<',
+              '<=', '>', '>=', '!', '!=', '?', '||', '&&']
 
 SEPARATORS = ['\t', '\n', ' ', '(', ')', ',', '.', ':', ';', '[', ']',
               '{', '}']
