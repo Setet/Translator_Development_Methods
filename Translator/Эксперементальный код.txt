@@ -4,10 +4,12 @@ q = 10
 sum = 0
 while (x > 0)
 {
-sum += x % q
-x /= q
+sum =sum + x % q
+sum =sum ++ x % q
+x =x / q
 }
 alert("Сумма элем = "+sum)
 }
 
 sum(1945)
+sum(19.5)
