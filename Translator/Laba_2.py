@@ -6,23 +6,23 @@ def priority(str):
         return 0
     if str in ["R5", "R11", "R6", "W3", "R9"]:
         return 1
-    if str in ["O1", "W36", "W9"]:
+    if str in ["O1", "W1", "W9"]:
         return 2
-    if str == "O16":
+    if str == "O18":
         return 3
-    if str == "O14":
+    if str == "O19":
         return 4
-    if str == "O17":
+    if str == "O15":
         return 5
-    if str in ["O10", "O12", "O25", "O24", "O11", "O13"]:
+    if str in ["O11", "O13", "O2", "O16", "O12", "O14"]:
         return 6
-    if str in ["O4", "O6"]:
+    if str in ["O5", "O7"]:
         return 7
-    if str in ["O2", "O8", "O9"]:
+    if str in ["O3", "O9", "O10"]:
         return 8
-    if str in ["O3", "O5", "O7"]:
+    if str in ["O4", "O6", "O8"]:
         return 9
-    if str in ["R8", "R12", "W29", "R13"]:
+    if str in ["R8", "R12", "W22", "W23", "24", "R13"]:
         return 10
 
 
@@ -59,7 +59,7 @@ def main():
         if lexem == "R6":
             while STACK[len(STACK) - 1] != "АЭМ" and STACK[len(STACK) - 1] != "Ф" and STACK[len(STACK) - 1] != "ARR" and \
                     STACK[len(STACK) - 1] != "R4":
-                if STACK[len(STACK) - 1] == "W36":
+                if STACK[len(STACK) - 1] == "W1":
                     STACK.pop()
                     OUTPUT.append("БП")
                 else:
@@ -139,7 +139,7 @@ def main():
         if lexem == "R9":
             while len(STACK) > 0 and STACK[-1] != "R4" and STACK[-1] != "W5" and STACK[-1] != "W6" and STACK[
                 -1] != "W3" and STACK[-1] != "W4" and STACK[-1] != "W8" and STACK[-1] != "function":
-                if STACK[len(STACK) - 1] == "W36":
+                if STACK[len(STACK) - 1] == "W1":
                     STACK.pop()
                     OUTPUT.append("БП")
                 else:
@@ -149,7 +149,7 @@ def main():
         if lexem == "R5":
             while len(STACK) > 0 and STACK[len(STACK) - 1] != "R4" and STACK[len(STACK) - 1] != "Ф" and STACK[
                 len(STACK) - 1] != "ARR":
-                if STACK[len(STACK) - 1] == "W36":
+                if STACK[len(STACK) - 1] == "W1":
                     STACK.pop()
                     OUTPUT.append("БП")
                 else:
@@ -170,7 +170,7 @@ def main():
 
         if lexem == "R11":
             while STACK[len(STACK) - 1] != "АЭМ":
-                if STACK[len(STACK) - 1] == "W36":
+                if STACK[len(STACK) - 1] == "W1":
                     STACK.pop()
                     OUTPUT.append("БП")
                 else:
@@ -185,7 +185,7 @@ def main():
             continue
 
         while len(STACK) > 0 and priority(STACK[len(STACK) - 1]) >= priority(lexem):
-            if STACK[len(STACK) - 1] == "W36":
+            if STACK[len(STACK) - 1] == "W1":
                 STACK.pop()
                 OUTPUT.append("БП")
             else:
@@ -193,7 +193,7 @@ def main():
         STACK.append(lexem)
 
     while len(STACK) > 0:
-        if STACK[len(STACK) - 1] == "W36":
+        if STACK[len(STACK) - 1] == "W1":
             STACK.pop()
             OUTPUT.append("БП")
         else:
