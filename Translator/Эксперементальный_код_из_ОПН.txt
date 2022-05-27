@@ -1,11 +1,23 @@
-function summ(x){
-q = 10
-sum = 0
-while (x > 0){
-sum =sum + x % q
-sum =sum ++ x % q
-x =x / q}
-alert("Сумма элем = "+sum)}
+program Name1
+integer :: a 
+a = sum_num(1945)
+print *,"Сумма элем = ",a
+integer, dimension(3) :: arr
+arr = (/"Яблоко", "Апельсин", "Слива"/)
+do while(i<3){
+print *,arr[i]
+end do
+end program Name1
 
-sum(1945)
-sum(19.5)
+function sum_num(x)
+integer :: q = 10
+integer :: summa = 0
+do while (x > 0){
+x = x/q
+summa =summa + x
+if(!(summa=0)) goto M1
+print *,"Всё хорошо"
+goto M2
+print *,"Всё плохо"
+end do
+end function sum_num

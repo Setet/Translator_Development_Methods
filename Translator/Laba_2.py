@@ -46,8 +46,13 @@ def main():
 
     for i in range(len(INPUT)):
         lexem = INPUT[i]
+        print(lexem)
 
         if lexem == "R2" or lexem in I.values() or lexem in C.values() or lexem in N.values():
+            OUTPUT.append(lexem)
+            continue
+
+        if lexem == "W10":
             OUTPUT.append(lexem)
             continue
 

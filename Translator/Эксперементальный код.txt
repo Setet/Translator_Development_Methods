@@ -1,15 +1,18 @@
-function summ(x)
-{
-q = 10
-sum = 0
-while (x > 0)
-{
-sum =sum + x % q
-sum =sum ++ x % q
-x =x / q
-}
-alert("Сумма элем = "+sum)
-}
+int a;
+a = sum_num(1945);
+alert("Сумма элем = "+a);
+let arr = new Array(3);
+let arr = ["Яблоко", "Апельсин", "Слива"];
+while(i<3){
+alert(arr[i])}
 
-sum(1945)
-sum(19.5)
+
+function sum_num(x){
+int q = 10
+int summa = 0
+while (x > 0){
+x =x / q
+summa =summa + x}
+if(summa!=0){
+alert("Всё хорошо")}}
+
